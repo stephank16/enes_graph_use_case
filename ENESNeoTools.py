@@ -6,6 +6,22 @@ Helper tools for information retrieval for Neo4j data ingest
 from py2neo import authenticate, Node, Relationship, Graph
 
 
+user_name = "neo4j"
+pass_word = "prolog16"
+
+facet_list1 = {
+    11 : ['activity','CORDEX'],
+    10 : ['product' , 'output'],
+    9 : ['domain' , 'EUR-11'],   
+    8 : ['institution' , 'MPI-CSC'],
+    7 : ['GCMModelName' , 'MPI-M-MPI-ESM-LR'],
+    6 : ['CMIP5ExperimentName' , 'rcp85'],
+    5 : ['CMPIP5EnsembleMember' , 'r1i1p1'],
+    4 : ['RCMModelName' , 'MPI-CSC-REMO2009'],
+    3 : ['RCMVersionID' , 'v1'],
+    2 : ['Frequency' , 'day'],
+    1 : ['VariableName' ,'tas']
+}   
 
 
 
