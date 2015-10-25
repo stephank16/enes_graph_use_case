@@ -5,7 +5,9 @@ Helper tools for information retrieval for Neo4j data ingest
 
 from py2neo import authenticate, Node, Relationship, Graph
 
-
+from pyesgf.search import SearchConnection
+from netCDF4 import Dataset
+    
 user_name = "neo4j"
 pass_word = "prolog16"
 
@@ -22,6 +24,43 @@ facet_list1 = {
     2 : ['Frequency' , 'day'],
     1 : ['VariableName' ,'tas']
 }   
+
+def get_esgf_data_and_nodes():
+    PCMDI_SERVICE = 'http://pcmdi9.llnl.gov/esg-search/search'     
+    conn = SearchConnection(PCMDI_SERVICE,distrib=True)
+    ctx = conn.new_context(project='CMIP5',replica=False)
+    #ctx = conn.new_context()
+    #ctx = ctx.constrain(model='MPI-ESM-P',experiment='piControl',time_frequency='mon', data_node='aims3.llnl.gov')        
+    
+    my_result=[]    
+    ctx = ctx.constrain(project='CMIP5',model='MPI-ESM-P',experiment='piControl', data_node='aims3.llnl.gov')  
+    data_nodes = ctx.facet_counts['data_node'].keys()
+    models = ctx.facet_counts['model'].keys()
+    print "data nodes:", data_nodes
+    print "models: ", models
+        
+    #constrain search to get to datasets
+    
+    #ctx = ctx.constrain(model='MPI-ESM-P',experiment='piControl',time_frequency='mon', data_node='aims3.llnl.gov')
+    results = ctx.search()
+    print 'Hits:', ctx.hit_count
+    print 'Realms:', ctx.facet_counts['realm']
+    print 'Ensembles:', ctx.facet_counts['ensemble']
+    
+    for i in range(0,ctx.hit_count):    
+        file_ctx = results[i].file_context()
+        files = file_ctx.search()
+        size = files.batch_size
+        
+        for j in range(0,len(files)):
+           my_result.append(files[j].file_id)
+        print "files:", size
+        
+    return my_result
+    
+    
+    
+    
 
 
 
@@ -74,3 +113,6 @@ def data_service_nodes(dataserver):
                      Node("data_access_service",name=dataserver,service_type="globus",status='up')
                      ]
     return data_services                 
+
+if __name__ == '__main__':
+    print get_esgf_data_and_nodes()
