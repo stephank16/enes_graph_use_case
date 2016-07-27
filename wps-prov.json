@@ -1,0 +1,53 @@
+
+{  
+    "prefix": {
+        "enes": "http://www.enes.org/enes_entitiy/", 
+        "workflow": "http://www.enes.org/enes/workflow/#", 
+        "dc": "http://dublin-core.org/", 
+        "user": "http://www.enes.org/enes_entity/user/", 
+        "file": "http://www.enes.org/enes_entity/file/", 
+        "esgf": "http://carbon.dkrz.de/file/cmip5/", 
+        "enes_data": "http://enes_org/enes_data#"
+    },     
+    "entity": { 
+        "enes:input-data-set.nc": {
+            "dc:title": "eval_series_1", 
+            "prov:type": "Dataset", 
+            "prov:label": "experiment-mpi-m"
+            },  
+        "enes:temporal-mean-result1-v1.nc": {
+            "dc:title": "eval_series_1_1"
+            } 
+    },  
+    "wasDerivedFrom": {
+        "enes:process-step1": {
+        "prov:usedEntity": "enes:input-data-set.nc", 
+        "prov:generatedEntity": "enes:temporal-mean-result1-v1.nc"
+        }
+    },         
+    "activity": {
+        "workflow:temporal-mean-cdo": {
+        }
+    },       
+    "used": {
+    "enes:used-rel1": {
+      "prov:entity": "enes:input-data-set.nc", 
+      "prov:activity": "workflow:temporal-mean-cdo"
+      }
+    },
+    "wasGeneratedBy": {
+        "enes:gen-rel1": {
+        "prov:entity": "enes:temporal-mean-result1-v1.nc", 
+        "prov:activity": "workflow:temporal-mean-cdo"
+      }
+    },
+    "agent": {
+        "enes:Stephan Kindermann": {}
+    }, 
+    "wasAttributedTo": {
+        "enes:data-generator-rel1": {
+        "prov:entity": "enes:temporal-mean-result1-v1.nc", 
+        "prov:agent": "enes:Stephan Kindermann"
+      }
+    }   
+}
