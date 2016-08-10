@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='ASCII'?>
+<prov:document xmlns:dc="http://dublin-core.org/" 
+               xmlns:enes="http://www.enes.org/enes_entitiy/" 
+               xmlns:enes_data="http://enes_org/enes_data#" 
+               xmlns:esgf="http://carbon.dkrz.de/file/cmip5/" 
+               xmlns:file="http://www.enes.org/enes_entity/file/"
+               xmlns:prov="http://www.w3.org/ns/prov#"
+               xmlns:user="http://www.enes.org/enes_entity/user/" 
+               xmlns:workflow="http://www.enes.org/enes/workflow/#" 
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+<prov:wasDerivedFrom prov:id="enes:process-step1">\n   
+  <prov:generatedEntity prov:ref="enes:temporal-mean-result1-v1.nc"/>\n  
+  <prov:usedEntity prov:ref="enes:input-data-set.nc"/>\n 
+</prov:wasDerivedFrom>\n
+<prov:used prov:id="enes:used-rel1">\n 
+  <prov:activity prov:ref="workflow:temporal-mean-cdo"/>\n
+  <prov:entity prov:ref="enes:input-data-set.nc"/>\n
+</prov:used>\n 
+<prov:wasAttributedTo prov:id="enes:data-generator-rel1">\n  
+    <prov:entity prov:ref="enes:temporal-mean-result1-v1.nc"/>\n    
+    <prov:agent prov:ref="enes:Stephan Kindermann"/>\n 
+</prov:wasAttributedTo>\n 
+<prov:agent prov:id="enes:Stephan Kindermann"/>\n
+<prov:entity prov:id="enes:temporal-mean-result1-v1.nc">\n 
+   <dc:title>eval_series_1_1</dc:title>\n  
+</prov:entity>\n 
+<prov:entity prov:id="enes:input-data-set.nc">\n  
+  <prov:label>experiment-mpi-m</prov:label>\n 
+  <prov:type xsi:type="xsd:string">Dataset</prov:type>\n 
+  <dc:title>eval_series_1</dc:title>\n
+</prov:entity>\n  <prov:activity prov:id="workflow:temporal-mean-cdo"/>\n 
+<prov:wasGeneratedBy prov:id="enes:gen-rel1">\n  
+   <prov:entity prov:ref="enes:temporal-mean-result1-v1.nc"/>\n 
+   <prov:activity prov:ref="workflow:temporal-mean-cdo"/>\n
+</prov:wasGeneratedBy>\n</prov:document>
