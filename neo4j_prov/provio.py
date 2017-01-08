@@ -100,6 +100,18 @@ def gen_graph_model(prov_doc):
      ## create Node ... ##dot.add_node(node)
        return node
 
+
+    def _add_generic_node(qname):
+       count[0] += 1
+       node_id = 'n%d' % count[0]
+       node_label = '"%s"' % six.text_type(qname)
+
+       uri = qname.uri
+       node = Node(node_id, label=node_label, URL=uri)
+       node_map[uri] = node
+      
+       return node
+
     def _get_node(qname):
        if qname is None:
           print "ERROR: _get_node called for empty node"

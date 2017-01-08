@@ -1,0 +1,44 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="/home/stephan/Repos/Watching/vis/dist/vis.js"></script>
+      <link href="/home/stephan/Repos/Watching/vis/dist/vis.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div id="730f0d56-7857-495f-ab2b-3bd8eac1f275"></div>
+    <script type="text/javascript">
+      var nodes = [{"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissioncheck', u'label': u'\"subm:check\"'}", "group": "n17", "id": 4, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionout1_ing', u'label': u'\"subm:out1_ing\"'}", "group": "n13", "id": 20, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_agent/data_managerhdh_id', u'label': u'\"data_manager:hdh_id\"'}", "group": "n6", "id": 5, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissioningest', u'label': u'\"subm:ingest\"'}", "group": "n18", "id": 8, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionout1_rev', u'label': u'\"subm:out1_rev\"'}", "group": "n10", "id": 13, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionout1_arch', u'label': u'\"subm:out1_arch\"'}", "group": "n7", "id": 21, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionarchive', u'label': u'\"subm:archive\"'}", "group": "n19", "id": 6, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionout1_pub', u'label': u'\"subm:out1_pub\"'}", "group": "n12", "id": 14, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_agent/data_managerpeter_lenzen_id', u'label': u'\"data_manager:peter_lenzen_id\"'}", "group": "n4", "id": 1, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionpublish', u'label': u'\"subm:publish\"'}", "group": "n15", "id": 9, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionout1_che', u'label': u'\"subm:out1_che\"'}", "group": "n9", "id": 15, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_agent/data_managerkatharina_b_id', u'label': u'\"data_manager:katharina_b_id\"'}", "group": "n2", "id": 10, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionreview', u'label': u'\"subm:review\"'}", "group": "n14", "id": 0, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionout1_sub', u'label': u'\"subm:out1_sub\"'}", "group": "n8", "id": 11, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_agent/data_providertest_user_id', u'label': u'\"data_provider:test_user_id\"'}", "group": "n1", "id": 3, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionsubmit', u'label': u'\"subm:submit\"'}", "group": "n16", "id": 2, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_entity/data_submsissionempty', u'label': u'\"subm:empty\"'}", "group": "n20", "id": 12, "label": ""}, {"title": "{u'URL': u'http://www.enes.org/enes_agent/data_managerlta_id', u'label': u'\"data_manager:lta_id\"'}", "group": "n5", "id": 7, "label": ""}];
+      var edges = [{"to": 20, "from": 4, "label": "prov:Usage"}, {"to": 5, "from": 4, "label": "prov:Association"}, {"to": 8, "from": 20, "label": "prov:Generation"}, {"to": 13, "from": 20, "label": "prov:Derivation"}, {"to": 6, "from": 21, "label": "prov:Generation"}, {"to": 14, "from": 21, "label": "prov:Derivation"}, {"to": 15, "from": 9, "label": "prov:Usage"}, {"to": 10, "from": 9, "label": "prov:Association"}, {"to": 0, "from": 13, "label": "prov:Generation"}, {"to": 11, "from": 13, "label": "prov:Derivation"}, {"to": 2, "from": 11, "label": "prov:Generation"}, {"to": 12, "from": 11, "label": "prov:Derivation"}, {"to": 13, "from": 8, "label": "prov:Usage"}, {"to": 1, "from": 8, "label": "prov:Association"}, {"to": 4, "from": 15, "label": "prov:Generation"}, {"to": 20, "from": 15, "label": "prov:Derivation"}, {"to": 9, "from": 14, "label": "prov:Generation"}, {"to": 15, "from": 14, "label": "prov:Derivation"}, {"to": 14, "from": 6, "label": "prov:Usage"}, {"to": 7, "from": 6, "label": "prov:Association"}, {"to": 12, "from": 2, "label": "prov:Usage"}, {"to": 3, "from": 2, "label": "prov:Association"}, {"to": 11, "from": 0, "label": "prov:Usage"}, {"to": 1, "from": 0, "label": "prov:Association"}];
+      var container = document.getElementById("730f0d56-7857-495f-ab2b-3bd8eac1f275");
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: false
+          }
+      };
+      var network = new vis.Network(container, data, options);
+    </script>
+    </body>
+    </html>
+    
