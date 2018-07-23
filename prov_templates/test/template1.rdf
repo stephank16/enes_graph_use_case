@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:prov="http://www.w3.org/ns/prov#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:vargen="http://openprovenance.org/vargen#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:tmpl="http://openprovenance.org/tmpl#"
+	xmlns:var="http://openprovenance.org/var#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://openprovenance.org/var#quote">
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+	<prov:value rdf:resource="http://openprovenance.org/var#value"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://openprovenance.org/var#author">
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+	<foaf:name rdf:resource="http://openprovenance.org/var#name"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://openprovenance.org/var#quote">
+	<prov:wasAttributedTo rdf:resource="http://openprovenance.org/var#author"/>
+</rdf:Description>
+
+</rdf:RDF>

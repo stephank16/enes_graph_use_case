@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ASCII'?>
+<prov:document xmlns:ex="http://example.org/" xmlns:ex1="http://example.org/1/" xmlns:ex2="http://example.org/2/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:orcid="http://orcid.org/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:tmpl="http://openprovenance.org/tmpl#" xmlns:var="http://openprovenance.org/var#" xmlns:vargen="http://openprovenance.org/vargen#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:bundleContent prov:id="vargen:bundleid">
+    <prov:entity prov:id="var:quote">
+      <prov:value xsi:type="xsd:string">var:value</prov:value>
+    </prov:entity>
+    <prov:entity prov:id="var:author">
+      <prov:type>prov:Person</prov:type>
+      <foaf:name>var:name</foaf:name>
+    </prov:entity>
+    <prov:wasAttributedTo>
+      <prov:entity prov:ref="var:quote"/>
+      <prov:agent prov:ref="var:author"/>
+    </prov:wasAttributedTo>
+  </prov:bundleContent>
+</prov:document>

@@ -1,0 +1,26 @@
+@prefix ex: <http://example.org/> .
+@prefix ex1: <http://example.org/1/> .
+@prefix ex2: <http://example.org/2/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://openprovenance.org/vargen#> .
+@prefix ns2: <http://xmlns.com/foaf/0.1/> .
+@prefix orcid: <http://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix vargen: <http://openprovenance.org/vargen#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:bundleid {
+    <http://openprovenance.org/var#quote> a prov:Entity ;
+        prov:value "var:value"^^xsd:string ;
+        prov:wasAttributedTo <http://openprovenance.org/var#author> .
+
+    <http://openprovenance.org/var#author> a prov:Entity,
+            "prov:Person"^^xsd:string ;
+        ns2:name "var:name"^^xsd:string .
+}
+

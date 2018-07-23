@@ -15,6 +15,21 @@ def set_namespaces(ns, prov_doc):
     return prov_doc  
 
 
+def make_binding(prov_doc,entity_dict,attr_dict):
+
+    prov_doc.add_namespace('tmpl','<http://openprovenance.org/tmpl#>')
+
+    for var,val in entity_dict.items():
+       prov_doc.entity(var,{'tmpl:value':val})
+
+    for var,val in attr_dict.items():
+       prov_doc.entity(var,{'tmpl:2dvalue_0_0':val})
+
+    return prov_doc
+
+
+
+
 def make_prov(prov_doc): 
     # for enes data ingest use case: use information from dkrz_forms/config/workflow_steps.py
    
@@ -38,11 +53,13 @@ def save_and_show(doc,filename):
     doc1 = make_prov(doc)
     print(doc1.get_provn())
 
-    with open(filename, 'w') as provn_file:
+    with open(filename+".provn", 'w') as provn_file:
         provn_file.write(doc1.get_provn())
+    with open(filename+".xml",'w') as xml_file:
+        xml_file.write(doc1.serialize(format='xml'))
+    with open(filename+".rdf",'w') as rdf_file:
+        rdf_file.write(doc1.serialize(format='rdf'))    
     
-    print("------")
-    print("saved in file:",filename)
     return doc1
 
 

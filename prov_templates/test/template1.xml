@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:ns2="http://openprovenance.org/prov/extension#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vargen="http://openprovenance.org/vargen#" xmlns:tmpl="http://openprovenance.org/tmpl#" xmlns:var="http://openprovenance.org/var#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <prov:bundleContent prov:id="vargen:bundleId">
+        <prov:entity prov:id="var:quote">
+            <prov:value xsi:type="xsd:QName">var:value</prov:value>
+        </prov:entity>
+        <prov:entity prov:id="var:author">
+            <prov:type xsi:type="xsd:QName">prov:Person</prov:type>
+            <foaf:name xsi:type="xsd:QName">var:name</foaf:name>
+        </prov:entity>
+        <prov:wasAttributedTo>
+            <prov:entity prov:ref="var:quote"/>
+            <prov:agent prov:ref="var:author"/>
+        </prov:wasAttributedTo>
+    </prov:bundleContent>
+</prov:document>

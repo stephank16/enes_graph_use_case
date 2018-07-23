@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:ns2="http://openprovenance.org/prov/extension#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tmpl="http://openprovenance.org/tmpl#" xmlns:ex="http://example.com/#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:var="http://openprovenance.org/var#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pre_0="http://orcid.org/" xmlns:bnode="http://openprovenance.org/provtoolbox/bnode/">
+    <prov:entity prov:id="var:author">
+        <tmpl:value__0 xsi:type="xsd:QName">pre_0:_0000-0002-3494-120X</tmpl:value__0>
+    </prov:entity>
+    <prov:entity prov:id="var:quote">
+        <tmpl:value__0 xsi:type="xsd:QName">ex:quote1</tmpl:value__0>
+    </prov:entity>
+    <prov:entity prov:id="var:value">
+        <tmpl:_2dvalue__0__0 xsi:type="xsd:string">A Little Provenance Goes a Long Way</tmpl:_2dvalue__0__0>
+    </prov:entity>
+    <prov:entity prov:id="var:name">
+        <tmpl:_2dvalue__0__0 xsi:type="xsd:string">Luc Moreau</tmpl:_2dvalue__0__0>
+    </prov:entity>
+</prov:document>

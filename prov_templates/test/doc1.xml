@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:ns2="http://openprovenance.org/prov/extension#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ex="http://example.com/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pre_0="http://orcid.org/" xmlns:uuid="urn:uuid:" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <prov:bundleContent prov:id="uuid:b07bc92f-f16a-443c-9e0a-3bda4063fc10">
+        <prov:entity prov:id="ex:quote1">
+            <prov:value xsi:type="xsd:string">A Little Provenance Goes a Long Way</prov:value>
+        </prov:entity>
+        <prov:entity prov:id="pre_0:_0000-0002-3494-120X">
+            <prov:type xsi:type="xsd:QName">prov:Person</prov:type>
+            <foaf:name xsi:type="xsd:string">Luc Moreau</foaf:name>
+        </prov:entity>
+        <prov:wasAttributedTo>
+            <prov:entity prov:ref="ex:quote1"/>
+            <prov:agent prov:ref="pre_0:_0000-0002-3494-120X"/>
+        </prov:wasAttributedTo>
+    </prov:bundleContent>
+</prov:document>
