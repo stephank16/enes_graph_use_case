@@ -1,0 +1,88 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix evt: <http://www.esmvaltool.org/scheme> .
+@prefix ex: <http://example.org/> .
+@prefix ex1: <http://example.org/1/> .
+@prefix ex2: <http://example.org/2/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gen: <http://enes.org/provgen> .
+@prefix ns1: <http://openprovenance.org/vargen#> .
+@prefix ns2: <http://www.esmvaltool.org/> .
+@prefix ns3: <http://xmlns.com/foaf/0.1/> .
+@prefix ns4: <http://enes.org/> .
+@prefix orcid: <http://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix vargen: <http://openprovenance.org/vargen#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:bundleid {
+    var:outfile a prov:Entity ;
+        ns2:schemecaption "var:caption"^^xsd:string ;
+        ns2:schemedomain "var:domain"^^xsd:string ;
+        ns2:schemeplottype "var:plottype"^^xsd:string ;
+        ns2:schemerealm "var:realm"^^xsd:string ;
+        ns2:schemetheme "var:theme"^^xsd:string ;
+        ns2:schemevariable "var:variable"^^xsd:string ;
+        prov:wasDerivedFrom ns2:schemerecipe ;
+        prov:wasGeneratedBy ns2:schemediagrun .
+
+    ns4:provgendata_collection a prov:Entity,
+            "prov:Collection"^^xsd:string ;
+        ns4:provgenscript "gen_data_collection(provdoc,provcollection,ds_dict)"^^xsd:string .
+
+    var:Author_diag a prov:Agent,
+            "prov:Person"^^xsd:string ;
+        ns3:name "var:name"^^xsd:string .
+
+    var:Author_nml a prov:Agent,
+            "prov:Person"^^xsd:string ;
+        ns3:name "var:name"^^xsd:string .
+
+    ns2:schemediag_setting a prov:Entity .
+
+    ns2:schemediagnostic a prov:Entity ;
+        ns2:schemedescription "var:diag_description"^^xsd:string ;
+        ns2:schemereferences "var:references"^^xsd:string ;
+        ns2:schemestatistics "var:statistics"^^xsd:string ;
+        prov:wasAttributedTo var:Author_diag .
+
+    ns2:schemediagrun a prov:Activity ;
+        prov:used ns2:schemediag_setting,
+            ns2:schemediagnostic,
+            ns2:schemepreproc_file ;
+        prov:wasAssociatedWith ns2:schemesoftware .
+
+    ns2:schemepreproc_file a prov:Entity ;
+        prov:wasGeneratedBy ns2:schemepreprocrun .
+
+    ns2:schemepreproc_setting a prov:Entity ;
+        ns2:schemecmor "var:cmor_fixes"^^xsd:string ;
+        ns2:schemederivation "var:derivation"^^xsd:string ;
+        ns2:schemelevelint "var:levelint"^^xsd:string ;
+        ns2:schememasking "var:masking"^^xsd:string ;
+        ns2:schememultimeanstat "var:multimeanstat"^^xsd:string ;
+        ns2:schemeregridding "var:regridding"^^xsd:string ;
+        ns2:schemetimesel "var:timesel"^^xsd:string .
+
+    ns2:schemepreprocrun a prov:Activity ;
+        prov:used ns4:provgendata_collection,
+            ns2:schemepreproc_setting ;
+        prov:wasAssociatedWith ns2:schemesoftware .
+
+    ns2:schemerecipe a prov:Entity ;
+        ns2:schemedescription "var:nml_description"^^xsd:string ;
+        ns2:schemeproject "var:project"^^xsd:string ;
+        ns2:schemereferences "var:nml_references"^^xsd:string ;
+        prov:wasAttributedTo var:Author_nml .
+
+    ns2:schemesoftware a prov:Agent,
+            "prov:SoftwareAgent"^^xsd:string ;
+        ns2:schemeESMValTool "var:ESMValTool"^^xsd:string ;
+        ns2:schemeNCL "var:NCL"^^xsd:string ;
+        ns2:schemePython "var:Python"^^xsd:string .
+}
+

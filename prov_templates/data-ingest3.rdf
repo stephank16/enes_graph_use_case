@@ -1,0 +1,76 @@
+@prefix ex: <http://example.org/> .
+@prefix ex1: <http://example.org/1/> .
+@prefix ex2: <http://example.org/2/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orcid: <http://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix vargen: <http://openprovenance.org/vargen#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+var:data-ingest-wflow {
+    ex:wf_result a prov:Entity ;
+        prov:wasGeneratedBy ex:wf_trace_composition .
+
+    ex:wf_trace_composition a prov:Activity ;
+        prov:used var:data_ingest_out,
+            var:data_publication_out,
+            var:data_quality_assurance_out,
+            var:data_submission_out,
+            var:data_submission_review_out ;
+        prov:wasAssociatedWith ex:workflow_handler .
+
+    ex:workflow_handler a prov:Agent .
+
+    var:data_ingest_activity a prov:Activity ;
+        prov:used var:data_submission_review_out ;
+        prov:wasAssociatedWith var:data_ingest_agent .
+
+    var:data_ingest_agent a prov:Agent .
+
+    var:data_publication_activity a prov:Activity ;
+        prov:used var:data_quality_assurance_out ;
+        prov:wasAssociatedWith var:data_publication_agent .
+
+    var:data_publication_agent a prov:Agent .
+
+    var:data_publication_out a prov:Entity ;
+        prov:wasGeneratedBy var:data_publication_activity .
+
+    var:data_quality_assurance_activity a prov:Activity ;
+        prov:used var:data_ingest_out ;
+        prov:wasAssociatedWith var:data_quality_assurance_agent .
+
+    var:data_quality_assurance_agent a prov:Agent .
+
+    var:data_submission_activity a prov:Activity ;
+        prov:used var:data_submission_in ;
+        prov:wasAssociatedWith var:data_submission_agent .
+
+    var:data_submission_agent a prov:Agent .
+
+    var:data_submission_in a prov:Entity .
+
+    var:data_submission_review_activity a prov:Activity ;
+        prov:used var:data_submission_out ;
+        prov:wasAssociatedWith var:data_submission_review_agent .
+
+    var:data_submission_review_agent a prov:Agent .
+
+    var:data_ingest_out a prov:Entity ;
+        prov:wasGeneratedBy var:data_ingest_activity .
+
+    var:data_quality_assurance_out a prov:Entity ;
+        prov:wasGeneratedBy var:data_quality_assurance_activity .
+
+    var:data_submission_out a prov:Entity ;
+        prov:wasGeneratedBy var:data_submission_activity .
+
+    var:data_submission_review_out a prov:Entity ;
+        prov:wasGeneratedBy var:data_submission_review_activity .
+}
+

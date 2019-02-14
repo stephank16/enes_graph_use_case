@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:evt="http://www.esmvaltool.org/scheme" xmlns:ex="http://example.org/" xmlns:ex1="http://example.org/1/" xmlns:ex2="http://example.org/2/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gen="http://enes.org/provgen" xmlns:orcid="http://orcid.org/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:tmpl="http://openprovenance.org/tmpl#" xmlns:var="http://openprovenance.org/var#" xmlns:vargen="http://openprovenance.org/vargen#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:bundleContent prov:id="vargen:bundleid">
+    <prov:entity prov:id="var:outfile">
+      <evt:caption>var:caption</evt:caption>
+      <evt:domain>var:domain</evt:domain>
+      <evt:plottype>var:plottype</evt:plottype>
+      <evt:realm>var:realm</evt:realm>
+      <evt:theme>var:theme</evt:theme>
+      <evt:variable>var:variable</evt:variable>
+    </prov:entity>
+    <prov:entity prov:id="evt:diagnostic">
+      <evt:description>var:diag_description</evt:description>
+      <evt:references>var:references</evt:references>
+      <evt:statistics>var:statistics</evt:statistics>
+    </prov:entity>
+    <prov:entity prov:id="evt:recipe">
+      <evt:description>var:nml_description</evt:description>
+      <evt:project>var:project</evt:project>
+      <evt:references>var:nml_references</evt:references>
+    </prov:entity>
+    <prov:entity prov:id="gen:data_collection">
+      <prov:type>prov:Collection</prov:type>
+      <gen:script>gen_data_collection(provdoc,provcollection,ds_dict)</gen:script>
+    </prov:entity>
+    <prov:entity prov:id="evt:preproc_file"/>
+    <prov:agent prov:id="evt:software">
+      <prov:type>prov:SoftwareAgent</prov:type>
+      <evt:ESMValTool>var:ESMValTool</evt:ESMValTool>
+      <evt:NCL>var:NCL</evt:NCL>
+      <evt:Python>var:Python</evt:Python>
+    </prov:agent>
+    <prov:entity prov:id="evt:preproc_setting">
+      <evt:cmor>var:cmor_fixes</evt:cmor>
+      <evt:derivation>var:derivation</evt:derivation>
+      <evt:levelint>var:levelint</evt:levelint>
+      <evt:masking>var:masking</evt:masking>
+      <evt:multimeanstat>var:multimeanstat</evt:multimeanstat>
+      <evt:regridding>var:regridding</evt:regridding>
+      <evt:timesel>var:timesel</evt:timesel>
+    </prov:entity>
+    <prov:entity prov:id="evt:diag_setting"/>
+    <prov:agent prov:id="var:Author_nml">
+      <prov:type>prov:Person</prov:type>
+      <foaf:name>var:name</foaf:name>
+    </prov:agent>
+    <prov:agent prov:id="var:Author_diag">
+      <prov:type>prov:Person</prov:type>
+      <foaf:name>var:name</foaf:name>
+    </prov:agent>
+    <prov:activity prov:id="evt:diagrun"/>
+    <prov:activity prov:id="evt:preprocrun"/>
+    <prov:wasDerivedFrom>
+      <prov:generatedEntity prov:ref="var:outfile"/>
+      <prov:usedEntity prov:ref="evt:recipe"/>
+    </prov:wasDerivedFrom>
+    <prov:wasGeneratedBy>
+      <prov:entity prov:ref="var:outfile"/>
+      <prov:activity prov:ref="evt:diagrun"/>
+    </prov:wasGeneratedBy>
+    <prov:wasGeneratedBy>
+      <prov:entity prov:ref="evt:preproc_file"/>
+      <prov:activity prov:ref="evt:preprocrun"/>
+    </prov:wasGeneratedBy>
+    <prov:used>
+      <prov:activity prov:ref="evt:diagrun"/>
+      <prov:entity prov:ref="evt:diagnostic"/>
+    </prov:used>
+    <prov:used>
+      <prov:activity prov:ref="evt:diagrun"/>
+      <prov:entity prov:ref="evt:preproc_file"/>
+    </prov:used>
+    <prov:used>
+      <prov:activity prov:ref="evt:diagrun"/>
+      <prov:entity prov:ref="evt:diag_setting"/>
+    </prov:used>
+    <prov:wasAssociatedWith>
+      <prov:activity prov:ref="evt:diagrun"/>
+      <prov:agent prov:ref="evt:software"/>
+    </prov:wasAssociatedWith>
+    <prov:used>
+      <prov:activity prov:ref="evt:preprocrun"/>
+      <prov:entity prov:ref="gen:data_collection"/>
+    </prov:used>
+    <prov:wasAssociatedWith>
+      <prov:activity prov:ref="evt:preprocrun"/>
+      <prov:agent prov:ref="evt:software"/>
+    </prov:wasAssociatedWith>
+    <prov:used>
+      <prov:activity prov:ref="evt:preprocrun"/>
+      <prov:entity prov:ref="evt:preproc_setting"/>
+    </prov:used>
+    <prov:wasAttributedTo>
+      <prov:entity prov:ref="evt:recipe"/>
+      <prov:agent prov:ref="var:Author_nml"/>
+    </prov:wasAttributedTo>
+    <prov:wasAttributedTo>
+      <prov:entity prov:ref="evt:diagnostic"/>
+      <prov:agent prov:ref="var:Author_diag"/>
+    </prov:wasAttributedTo>
+  </prov:bundleContent>
+</prov:document>
